@@ -5,6 +5,8 @@ import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { CONFIG } from 'src/global-config';
+
 import { Iconify } from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
@@ -33,7 +35,7 @@ export function ProductFooter({ sx, ...other }) {
           <Stack direction="row" spacing={1} alignItems="center">
             <Box
               component="img"
-              src="/assets/images/edgelink/nubificus-logo.svg"
+              src={`${CONFIG.assetsDir}/assets/images/edgelink/nubificus-logo.svg`}
               alt="Nubificus Logo"
               sx={{ height: 24, width: 'auto' }}
             />

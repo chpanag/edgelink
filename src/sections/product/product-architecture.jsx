@@ -8,6 +8,8 @@ import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { CONFIG } from 'src/global-config';
+
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
 
@@ -173,7 +175,7 @@ export function ProductArchitecture({ sx, ...other }) {
     >
       <Box
         component="img"
-        src="/assets/images/edgelink/akri-update-reflash.png"
+        src={`${CONFIG.assetsDir}/assets/images/edgelink/akri-update-reflash.png`}
         alt="Device Repurposing with Akri and FlashJobs"
         sx={{
           width: '100%',

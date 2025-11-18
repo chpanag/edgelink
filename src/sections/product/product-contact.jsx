@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { CONFIG } from 'src/global-config';
+
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
 
@@ -42,7 +44,7 @@ export function ProductContact({ sx, ...other }) {
           >
             <Box
               component="img"
-              src="/assets/images/edgelink/nubificus-logo.svg"
+              src={`${CONFIG.assetsDir}/assets/images/edgelink/nubificus-logo.svg`}
               alt="Nubificus Logo"
               sx={{
                 width: '100%',

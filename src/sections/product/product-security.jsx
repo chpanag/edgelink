@@ -8,6 +8,8 @@ import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { CONFIG } from 'src/global-config';
+
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
 
@@ -84,7 +86,7 @@ export function ProductSecurity({ sx, ...other }) {
       >
         <Box
           component="img"
-          src="/assets/images/edgelink/iot-device-workflow.png"
+          src={`${CONFIG.assetsDir}/assets/images/edgelink/iot-device-workflow.png`}
           alt="Secure IoT Device Workflow"
           sx={{
             width: '100%',

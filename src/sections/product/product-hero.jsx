@@ -5,6 +5,8 @@ import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { CONFIG } from 'src/global-config';
+
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionContainer } from 'src/components/animate';
 
@@ -186,7 +188,7 @@ export function ProductHero({ sx, ...other }) {
             right: 0,
             bottom: 0,
             width: { xs: '100%', md: '50%' },
-            backgroundImage: 'url(/assets/images/edgelink/cloud-storage-remote-web-server-hosting-information-warehouse-file-access-connection/hero.jpg)',
+            backgroundImage: `url(${CONFIG.assetsDir}/assets/images/edgelink/cloud-storage-remote-web-server-hosting-information-warehouse-file-access-connection/hero.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.3,
