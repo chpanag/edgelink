@@ -18,7 +18,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorBoundary />,
     children: routesSection,
   },
-]);
+], {
+  basename: '/edgelink/',
+});
 
 const root = createRoot(document.getElementById('root'));
 
