@@ -10,6 +10,9 @@ import { ProductSolution } from '../product-solution';
 import { ProductUseCases } from '../product-use-cases';
 import { ProductCapabilities } from '../product-capabilities';
 import { ProductArchitecture } from '../product-architecture';
+import { ProductHowItWorks } from '../product-how-it-works';
+import { ProductSecurity } from '../product-security';
+import { ProductFooter } from '../product-footer';
 
 // ----------------------------------------------------------------------
 
@@ -37,9 +40,15 @@ export function ProductView() {
 
         <ProductArchitecture />
 
+        <ProductHowItWorks />
+
+        <ProductSecurity />
+
         <ProductUseCases />
 
         <ProductContact />
+
+        <ProductFooter />
       </Stack>
     </>
   );

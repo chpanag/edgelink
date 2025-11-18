@@ -1,6 +1,8 @@
 import { m } from 'framer-motion';
+import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -62,8 +64,9 @@ export function ProductHero({ sx, ...other }) {
             mx: 'auto',
             maxWidth: 720,
             textAlign: 'center',
-            color: 'text.secondary',
+            color: 'primary.contrastText',
             fontWeight: 400,
+            opacity: 0.9,
             [theme.breakpoints.up('lg')]: { fontSize: 24, lineHeight: '36px' },
           }),
         ]}
@@ -81,7 +84,7 @@ export function ProductHero({ sx, ...other }) {
           mx: 'auto',
           maxWidth: 800,
           textAlign: 'center',
-          color: 'text.primary',
+          color: 'primary.contrastText',
         }}
       >
         <strong>EdgeLink</strong> is a smart edge gateway that connects legacy chargers, inverters
@@ -99,27 +102,33 @@ export function ProductHero({ sx, ...other }) {
         sx={{
           mx: 'auto',
           maxWidth: 720,
-          color: 'text.secondary',
+          color: 'primary.contrastText',
           typography: 'body2',
         }}
       >
         <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
-          <Iconify icon="eva:checkmark-circle-2-fill" color="success.main" />
-          <Typography variant="body2">Upgrade without replacing hardware</Typography>
+          <Iconify icon="eva:checkmark-circle-2-fill" sx={{ color: 'common.white' }} />
+          <Typography variant="body2" sx={{ color: 'primary.contrastText' }}>
+            Upgrade without replacing hardware
+          </Typography>
         </Stack>
         <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
-          <Iconify icon="eva:checkmark-circle-2-fill" color="success.main" />
-          <Typography variant="body2">
+          <Iconify icon="eva:checkmark-circle-2-fill" sx={{ color: 'common.white' }} />
+          <Typography variant="body2" sx={{ color: 'primary.contrastText' }}>
             Deploy anywhere: Raspberry Pi, ESP32 or similar SBC/MCU platforms
           </Typography>
         </Stack>
         <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
-          <Iconify icon="eva:checkmark-circle-2-fill" color="success.main" />
-          <Typography variant="body2">Secure OTA updates with attestation</Typography>
+          <Iconify icon="eva:checkmark-circle-2-fill" sx={{ color: 'common.white' }} />
+          <Typography variant="body2" sx={{ color: 'primary.contrastText' }}>
+            Secure OTA updates with attestation
+          </Typography>
         </Stack>
         <Stack direction="row" spacing={1} alignItems="center" justifyContent="center">
-          <Iconify icon="eva:checkmark-circle-2-fill" color="success.main" />
-          <Typography variant="body2">Cloud-edge orchestration ready</Typography>
+          <Iconify icon="eva:checkmark-circle-2-fill" sx={{ color: 'common.white' }} />
+          <Typography variant="body2" sx={{ color: 'primary.contrastText' }}>
+            Cloud-edge orchestration ready
+          </Typography>
         </Stack>
       </Stack>
     </m.div>
@@ -134,33 +143,33 @@ export function ProductHero({ sx, ...other }) {
         gap: { xs: 1.5, sm: 2 },
       }}
     >
-      <m.div {...motionProps}>
-        <Button
-          color="primary"
-          size="large"
-          variant="contained"
-          href="mailto:info@nubificus.co.uk"
-          startIcon={<Iconify width={24} icon="eva:email-fill" />}
-          sx={{ height: 52 }}
-        >
-          Contact Us
-        </Button>
-      </m.div>
+      {/*<m.div {...motionProps}>*/}
+      {/*  <Button*/}
+      {/*    color="primary"*/}
+      {/*    size="large"*/}
+      {/*    variant="contained"*/}
+      {/*    href="mailto:info@nubificus.co.uk"*/}
+      {/*    startIcon={<Iconify width={24} icon="eva:email-fill" />}*/}
+      {/*    sx={{ height: 52 }}*/}
+      {/*  >*/}
+      {/*    Contact Us*/}
+      {/*  </Button>*/}
+      {/*</m.div>*/}
 
-      <m.div {...motionProps}>
-        <Button
-          color="inherit"
-          size="large"
-          variant="outlined"
-          href="https://github.com/nubificus"
-          target="_blank"
-          rel="noopener noreferrer"
-          startIcon={<Iconify width={24} icon="eva:github-fill" />}
-          sx={{ height: 52, borderColor: 'currentColor' }}
-        >
-          View on GitHub
-        </Button>
-      </m.div>
+      {/*<m.div {...motionProps}>*/}
+      {/*  <Button*/}
+      {/*    color="inherit"*/}
+      {/*    size="large"*/}
+      {/*    variant="outlined"*/}
+      {/*    href="https://github.com/nubificus"*/}
+      {/*    target="_blank"*/}
+      {/*    rel="noopener noreferrer"*/}
+      {/*    startIcon={<Iconify width={24} icon="eva:github-fill" />}*/}
+      {/*    sx={{ height: 52, borderColor: 'currentColor' }}*/}
+      {/*  >*/}
+      {/*    View on GitHub*/}
+      {/*  </Button>*/}
+      {/*</m.div>*/}
     </Box>
   );
 
@@ -171,8 +180,20 @@ export function ProductHero({ sx, ...other }) {
         (theme) => ({
           position: 'relative',
           py: { xs: 8, md: 12 },
-          [theme.breakpoints.up('md')]: {
-            minHeight: 640,
+          bgcolor: '#14247b',
+          overflow: 'hidden',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            width: { xs: '100%', md: '50%' },
+            backgroundImage: 'url(/assets/images/edgelink/cloud-storage-remote-web-server-hosting-information-warehouse-file-access-connection/hero.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.3,
+            zIndex: 0,
           },
         }),
         ...(Array.isArray(sx) ? sx : [sx]),
@@ -187,9 +208,11 @@ export function ProductHero({ sx, ...other }) {
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
+          position: 'relative',
+          zIndex: 1,
         }}
       >
-        <Stack spacing={3} sx={{ textAlign: 'center' }}>
+        <Stack spacing={3} sx={{ textAlign: 'center', color: 'primary.contrastText' }}>
           {renderHeading()}
           {renderSubheading()}
         </Stack>

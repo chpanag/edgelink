@@ -2,6 +2,7 @@ import { m } from 'framer-motion';
 import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -14,67 +15,100 @@ import { varFade, MotionViewport } from 'src/components/animate';
 
 export function ProductContact({ sx, ...other }) {
   const renderAbout = () => (
-    <Box
+    <Grid
       component={m.div}
-      variants={varFade('inUp', { distance: 24 })}
-      sx={[
-        (theme) => ({
-          mb: 8,
-          p: 5,
-          borderRadius: 2,
-          textAlign: 'center',
-          bgcolor: varAlpha(theme.vars.palette.grey['500Channel'], 0.04),
-          border: `1px solid ${varAlpha(theme.vars.palette.grey['500Channel'], 0.08)}`,
-        }),
-      ]}
+      variants={varFade('inLeft', { distance: 24 })}
+      size={{ xs: 12, lg: 6 }}
     >
-      <Typography variant="h3" sx={{ mb: 3 }}>
-        About Nubificus
-      </Typography>
-      <Typography
-        variant="body1"
-        sx={{
-          maxWidth: 800,
-          mx: 'auto',
-          color: 'text.secondary',
-          lineHeight: 1.8,
-        }}
+      <Box
+        sx={[
+          (theme) => ({
+            p: 3,
+            height: 1,
+            borderRadius: 2,
+            bgcolor: varAlpha(theme.vars.palette.primary.mainChannel, 0.08),
+            border: `2px solid ${varAlpha(theme.vars.palette.primary.mainChannel, 0.16)}`,
+          }),
+        ]}
       >
-        Nubificus specialises in cloud-native technologies for the <strong>edge and far edge</strong>,
-        with deep expertise in unikernels, virtualization, and high-performance compute continuum
-        systems. We design minimal-footprint, secure, and composable runtime environments tailored
-        for edge workloads.
-        <br />
-        <br />
-        EdgeLink continues this mission by transforming legacy energy assets into interoperable,
-        cloud-native participants in modern IoT ecosystems.
-      </Typography>
-    </Box>
+        <Stack spacing={1.5}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              mb: 0.5,
+            }}
+          >
+            <Box
+              component="img"
+              src="/assets/images/edgelink/nubificus-logo.svg"
+              alt="Nubificus Logo"
+              sx={{
+                width: '100%',
+                maxWidth: 120,
+                height: 'auto',
+              }}
+            />
+          </Box>
+          <Typography
+            variant="body2"
+            sx={{
+              color: 'text.secondary',
+              lineHeight: 1.5,
+              textAlign: 'justify',
+            }}
+          >
+            Nubificus specialises in cloud-native technologies for the <strong>edge and far edge</strong>,
+            with deep expertise in unikernels, virtualization, and high-performance compute continuum
+            systems. We design minimal-footprint, secure, and composable runtime environments tailored
+            for edge workloads.
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              color: 'text.secondary',
+              lineHeight: 1.5,
+              textAlign: 'justify',
+            }}
+          >
+            EdgeLink continues this mission by transforming legacy energy assets into interoperable,
+            cloud-native participants in modern IoT ecosystems.
+          </Typography>
+        </Stack>
+      </Box>
+    </Grid>
   );
 
   const renderCTA = () => (
-    <Box
+    <Grid
       component={m.div}
-      variants={varFade('inUp', { distance: 24 })}
-      sx={[
-        (theme) => ({
-          p: 6,
-          borderRadius: 2,
-          textAlign: 'center',
-          bgcolor: varAlpha(theme.vars.palette.primary.mainChannel, 0.08),
-          border: `2px solid ${varAlpha(theme.vars.palette.primary.mainChannel, 0.16)}`,
-        }),
-      ]}
+      variants={varFade('inRight', { distance: 24 })}
+      size={{ xs: 12, lg: 6 }}
     >
-      <Typography variant="h3" sx={{ mb: 2 }}>
+      <Box
+        sx={[
+          (theme) => ({
+            p: 3,
+            height: 1,
+            borderRadius: 2,
+            textAlign: 'center',
+            bgcolor: varAlpha(theme.vars.palette.primary.mainChannel, 0.08),
+            border: `2px solid ${varAlpha(theme.vars.palette.primary.mainChannel, 0.16)}`,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+          }),
+        ]}
+      >
+      <Typography variant="h5" sx={{ mb: 1.5 }}>
         Get EdgeLink
       </Typography>
       <Typography
-        variant="h6"
+        variant="body2"
         sx={{
-          mb: 4,
-          fontWeight: 400,
-          maxWidth: 700,
+          mb: 1.5,
+          fontWeight: 500,
           mx: 'auto',
           color: 'text.secondary',
         }}
@@ -82,10 +116,9 @@ export function ProductContact({ sx, ...other }) {
         Want to upgrade legacy chargers, meters or inverters — without replacing them?
       </Typography>
       <Typography
-        variant="body1"
+        variant="body2"
         sx={{
-          mb: 4,
-          maxWidth: 650,
+          mb: 2,
           mx: 'auto',
           color: 'text.primary',
         }}
@@ -97,39 +130,25 @@ export function ProductContact({ sx, ...other }) {
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
         spacing={2}
-        sx={{ justifyContent: 'center', mb: 4 }}
+        sx={{ justifyContent: 'center', mb: 2 }}
       >
         <Button
-          size="large"
           variant="contained"
           color="primary"
           href="mailto:info@nubificus.co.uk"
           startIcon={<Iconify icon="eva:email-fill" />}
-          sx={{ minWidth: 200 }}
         >
           Email Us
-        </Button>
-        <Button
-          size="large"
-          variant="outlined"
-          color="primary"
-          href="https://nubificus.co.uk"
-          target="_blank"
-          rel="noopener noreferrer"
-          startIcon={<Iconify icon="eva:external-link-outline" />}
-          sx={{ minWidth: 200 }}
-        >
-          Visit Website
         </Button>
       </Stack>
 
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
-        spacing={3}
+        spacing={2}
         sx={{
           justifyContent: 'center',
           alignItems: 'center',
-          pt: 3,
+          pt: 1.5,
           borderTop: (theme) => `1px dashed ${varAlpha(theme.vars.palette.grey['500Channel'], 0.2)}`,
         }}
       >
@@ -174,7 +193,8 @@ export function ProductContact({ sx, ...other }) {
           </Typography>
         </Stack>
       </Stack>
-    </Box>
+      </Box>
+    </Grid>
   );
 
   return (
@@ -190,8 +210,10 @@ export function ProductContact({ sx, ...other }) {
       {...other}
     >
       <Container component={MotionViewport}>
-        {renderAbout()}
-        {renderCTA()}
+        <Grid container spacing={4}>
+          {renderAbout()}
+          {renderCTA()}
+        </Grid>
       </Container>
     </Box>
   );

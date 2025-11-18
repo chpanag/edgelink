@@ -19,7 +19,7 @@ const LEGACY_ISSUES = [
     description: 'Serial data interfaces',
   },
   {
-    icon: 'eva:pulse-outline',
+    icon: 'eva:activity-outline',
     title: 'kWh Pulses',
     description: 'Energy meter outputs',
   },
@@ -115,7 +115,7 @@ export function ProductProblem({ sx, ...other }) {
         <Box component="span" sx={{ color: 'warning.main', fontWeight: 700 }}>
           10–20 years
         </Box>{' '}
-        still lack IP-based connectivity, outputting data through outdated interfaces:
+        still lack IP-based connectivity, outputting data through outdated interfaces.
       </Typography>
     </Box>
   );
@@ -128,7 +128,7 @@ export function ProductProblem({ sx, ...other }) {
       >
         Legacy Output Methods
       </Typography>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} justifyContent="center">
         {LEGACY_ISSUES.map((issue, index) => (
           <Grid
             component={m.div}
@@ -185,65 +185,6 @@ export function ProductProblem({ sx, ...other }) {
     </Box>
   );
 
-  const renderMissingFeatures = () => (
-    <Box
-      component={m.div}
-      variants={varFade('inUp', { distance: 24 })}
-      sx={[
-        (theme) => ({
-          p: 5,
-          borderRadius: 3,
-          bgcolor: varAlpha(theme.vars.palette.error.mainChannel, 0.04),
-          border: `2px dashed ${varAlpha(theme.vars.palette.error.mainChannel, 0.2)}`,
-        }),
-      ]}
-    >
-      <Typography
-        variant="h4"
-        sx={{
-          textAlign: 'center',
-          mb: 1,
-          fontWeight: 600,
-        }}
-      >
-        Critical Capabilities Missing
-      </Typography>
-      <Typography
-        variant="body1"
-        sx={{
-          textAlign: 'center',
-          mb: 4,
-          color: 'text.secondary',
-        }}
-      >
-        These devices cannot participate in modern energy systems:
-      </Typography>
-      <Grid container spacing={2} sx={{ maxWidth: 900, mx: 'auto' }}>
-        {MISSING_FEATURES.map((feature, index) => (
-          <Grid key={index} size={{ xs: 12, sm: 6 }}>
-            <Stack
-              direction="row"
-              spacing={2}
-              alignItems="center"
-              sx={[
-                (theme) => ({
-                  p: 2,
-                  borderRadius: 1.5,
-                  bgcolor: varAlpha(theme.vars.palette.error.mainChannel, 0.08),
-                }),
-              ]}
-            >
-              <Iconify icon={feature.icon} width={24} sx={{ color: 'error.main', flexShrink: 0 }} />
-              <Typography variant="body2" sx={{ fontWeight: 500 }}>
-                {feature.label}
-              </Typography>
-            </Stack>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
-  );
-
   return (
     <Box
       component="section"
@@ -260,7 +201,6 @@ export function ProductProblem({ sx, ...other }) {
         {renderTitle()}
         {renderDescription()}
         {renderLegacyOutputs()}
-        {renderMissingFeatures()}
       </Container>
     </Box>
   );

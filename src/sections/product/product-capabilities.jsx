@@ -2,6 +2,7 @@ import { m } from 'framer-motion';
 import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
@@ -30,15 +31,27 @@ const CAPABILITIES = [
   {
     icon: 'eva:cube-outline',
     title: 'Modular Cloud-Native Architecture',
-    description:
-      'All components packaged as OCI containers; critical ones run as unikernels via urunc.',
+    description: (
+      <>
+        All components packaged as OCI containers; critical ones run as unikernels via{' '}
+        <Link
+          href="https://urunc.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'inherit', fontWeight: 600 }}
+        >
+          urunc
+        </Link>
+        .
+      </>
+    ),
     color: 'success',
   },
   {
     icon: 'eva:sync-outline',
     title: 'Device Repurposing Pipeline',
     description:
-      'Redefine the function of any EdgeLink device through Kubernetes-style FlashJobs. Change roles (charger → inverter → meter) with a single declarative update.',
+      'Devices orchestrated as Kubernetes resources. Redefine the function of any EdgeLink device through K8s FlashJobs. Change roles (charger → inverter → meter) with a single declarative update.',
     color: 'warning',
   },
   {
@@ -52,15 +65,8 @@ const CAPABILITIES = [
     icon: 'eva:activity-outline',
     title: 'Robust Time-Series Processing',
     description:
-      'Canonicalisation, timestamping, debouncing, filtering, buffering for network loss.',
+      'Normalization, timestamping, debouncing, filtering, buffering for network loss.',
     color: 'secondary',
-  },
-  {
-    icon: 'eva:globe-2-outline',
-    title: 'Cloud–Edge Continuum Integration',
-    description:
-      'Works at the edge, on-prem micro-clouds, or cloud test environments using the same images and configs.',
-    color: 'primary',
   },
 ];
 
@@ -75,12 +81,37 @@ export function ProductCapabilities({ sx, ...other }) {
         What EdgeLink Offers
       </Typography>
       <Typography variant="h2" component="h2">
-        Key Capabilities
+        Key Features
       </Typography>
     </Box>
   );
 
-  const renderCapabilities = () => (
+  const renderRepurposingImage = () => (
+    <Box
+      component={m.div}
+      variants={varFade('inUp', { distance: 24 })}
+      sx={{
+        mb: 6,
+        textAlign: 'center',
+      }}
+    >
+      <Box
+        component="img"
+        src="/assets/images/edgelink/akri-update-reflash.png"
+        alt="Device Repurposing with Akri and FlashJobs"
+        sx={{
+          width: '100%',
+          maxWidth: 900,
+          height: 'auto',
+          mx: 'auto',
+          borderRadius: 2,
+          boxShadow: (theme) => theme.customShadows.z8,
+        }}
+      />
+    </Box>
+  );
+
+  const renderFeatures = () => (
     <Grid container spacing={3}>
       {CAPABILITIES.map((capability, index) => (
         <Grid
@@ -149,7 +180,7 @@ export function ProductCapabilities({ sx, ...other }) {
     >
       <Container component={MotionViewport}>
         {renderTitle()}
-        {renderCapabilities()}
+        {renderFeatures()}
       </Container>
     </Box>
   );

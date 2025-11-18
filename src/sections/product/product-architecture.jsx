@@ -2,6 +2,7 @@ import { m } from 'framer-motion';
 import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
@@ -16,7 +17,6 @@ const HARDWARE = [
   'Raspberry Pi (full gateway)',
   'ESP32 (close-to-signal MCU front-end)',
   'External ADC modules',
-  'Optional optical LED sensors',
   'RS-485/RS-232 transceivers',
   'Secure storage for cryptographic keys',
 ];
@@ -24,35 +24,20 @@ const HARDWARE = [
 const SOFTWARE = [
   'Linux OS (Pi variant)',
   'Lightweight RTOS (ESP32 variant)',
-  'Container runtime with urunc configured as OCI runtime',
-  'Canonicalisation & time-series layer',
+  <>
+    Container runtime with{' '}
+    <Link
+      href="https://urunc.io"
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{ color: 'inherit', fontWeight: 600 }}
+    >
+      urunc
+    </Link>{' '}
+    configured as OCI runtime
+  </>,
   'Protocol engine (MQTT/OPC UA/REST)',
   'OTA updater + attestation client',
-  'Discovery agent (Akri-style)',
-  'FlashJob controller/agent logic',
-];
-
-const SECURITY = [
-  {
-    title: 'urunc',
-    description: 'Unikernel workloads for drivers',
-  },
-  {
-    title: 'DICE root-of-trust',
-    description: 'Per-device identity',
-  },
-  {
-    title: 'EAT signed tokens',
-    description: 'Secure firmware updates',
-  },
-  {
-    title: 'TLS everywhere',
-    description: 'End-to-end encryption',
-  },
-  {
-    title: 'Firmware rollback support',
-    description: 'Safe update recovery',
-  },
 ];
 
 export function ProductArchitecture({ sx, ...other }) {
@@ -177,54 +162,28 @@ export function ProductArchitecture({ sx, ...other }) {
     </Grid>
   );
 
-  const renderSecurity = () => (
+  const renderArchitectureImage = () => (
     <Box
       component={m.div}
       variants={varFade('inUp', { distance: 24 })}
-      sx={[
-        (theme) => ({
-          mt: 4,
-          p: 4,
-          borderRadius: 2,
-          bgcolor: varAlpha(theme.vars.palette.error.mainChannel, 0.04),
-          border: `1px solid ${varAlpha(theme.vars.palette.error.mainChannel, 0.12)}`,
-        }),
-      ]}
+      sx={{
+        mt: 4,
+        textAlign: 'center',
+      }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-        <Box
-          sx={[
-            (theme) => ({
-              width: 48,
-              height: 48,
-              display: 'flex',
-              borderRadius: 1.5,
-              alignItems: 'center',
-              justifyContent: 'center',
-              bgcolor: varAlpha(theme.vars.palette.error.mainChannel, 0.16),
-              color: 'error.main',
-            }),
-          ]}
-        >
-          <Iconify icon="eva:shield-outline" width={24} />
-        </Box>
-        <Typography variant="h4">Virtualization & Security</Typography>
-      </Box>
-      <Grid container spacing={2}>
-        {SECURITY.map((item, index) => (
-          <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
-            <Stack spacing={0.5}>
-              <Stack direction="row" spacing={1} alignItems="center">
-                <Iconify icon="eva:shield-checkmark-fill" width={18} color="error.main" />
-                <Typography variant="subtitle2">{item.title}</Typography>
-              </Stack>
-              <Typography variant="body2" sx={{ color: 'text.secondary', pl: 3.25 }}>
-                {item.description}
-              </Typography>
-            </Stack>
-          </Grid>
-        ))}
-      </Grid>
+      <Box
+        component="img"
+        src="/assets/images/edgelink/akri-update-reflash.png"
+        alt="Device Repurposing with Akri and FlashJobs"
+        sx={{
+          width: '100%',
+          maxWidth: 900,
+          height: 'auto',
+          mx: 'auto',
+          borderRadius: 2,
+          boxShadow: (theme) => theme.customShadows.z8,
+        }}
+      />
     </Box>
   );
 
@@ -246,7 +205,7 @@ export function ProductArchitecture({ sx, ...other }) {
           {renderHardware()}
           {renderSoftware()}
         </Grid>
-        {renderSecurity()}
+        {renderArchitectureImage()}
       </Container>
     </Box>
   );

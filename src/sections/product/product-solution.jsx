@@ -23,7 +23,7 @@ const SOLUTION_FEATURES = [
   },
   {
     icon: 'eva:file-text-outline',
-    title: 'Canonicalised data models',
+    title: 'Normalized data models',
     description: 'Standardised data representation',
   },
   {
@@ -38,8 +38,8 @@ const SOLUTION_FEATURES = [
   },
   {
     icon: 'eva:refresh-outline',
-    title: 'Kubernetes-style repurposing',
-    description: 'OTA updates',
+    title: 'K8s-native orchestration',
+    description: 'Devices as K8s resources',
   },
   {
     icon: 'eva:lock-outline',
@@ -48,8 +48,8 @@ const SOLUTION_FEATURES = [
   },
   {
     icon: 'eva:globe-outline',
-    title: 'Compute continuum ready',
-    description: 'Secure, remotely manageable',
+    title: 'Cloud-native ready',
+    description: 'K8s orchestration, remotely manageable',
   },
 ];
 
