@@ -40,29 +40,6 @@ const LEGACY_ISSUES = [
   },
 ];
 
-const MISSING_FEATURES = [
-  {
-    icon: 'eva:cloud-outline',
-    label: 'Cloud-based optimisation',
-  },
-  {
-    icon: 'eva:car-outline',
-    label: 'V2G and flexibility markets',
-  },
-  {
-    icon: 'eva:copy-outline',
-    label: 'Digital twins',
-  },
-  {
-    icon: 'eva:activity-outline',
-    label: 'Predictive maintenance',
-  },
-  {
-    icon: 'eva:globe-2-outline',
-    label: 'Unified data spaces',
-  },
-];
-
 export function ProductProblem({ sx, ...other }) {
   const renderTitle = () => (
     <Box

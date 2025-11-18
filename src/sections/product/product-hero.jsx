@@ -1,10 +1,7 @@
 import { m } from 'framer-motion';
-import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
@@ -38,7 +35,7 @@ export function ProductHero({ sx, ...other }) {
           }),
         ]}
       >
-        Bridge Legacy Energy Assets to the{' '}
+        Bridge Legacy Assets to the{' '}
         <Box
           component="span"
           sx={[

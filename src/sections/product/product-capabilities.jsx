@@ -86,31 +86,6 @@ export function ProductCapabilities({ sx, ...other }) {
     </Box>
   );
 
-  const renderRepurposingImage = () => (
-    <Box
-      component={m.div}
-      variants={varFade('inUp', { distance: 24 })}
-      sx={{
-        mb: 6,
-        textAlign: 'center',
-      }}
-    >
-      <Box
-        component="img"
-        src="/assets/images/edgelink/akri-update-reflash.png"
-        alt="Device Repurposing with Akri and FlashJobs"
-        sx={{
-          width: '100%',
-          maxWidth: 900,
-          height: 'auto',
-          mx: 'auto',
-          borderRadius: 2,
-          boxShadow: (theme) => theme.customShadows.z8,
-        }}
-      />
-    </Box>
-  );
-
   const renderFeatures = () => (
     <Grid container spacing={3}>
       {CAPABILITIES.map((capability, index) => (
