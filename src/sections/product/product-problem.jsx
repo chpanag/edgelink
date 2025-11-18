@@ -70,18 +70,6 @@ export function ProductProblem({ sx, ...other }) {
       variants={varFade('inUp', { distance: 24 })}
       sx={{ textAlign: 'center', mb: { xs: 5, md: 8 } }}
     >
-      <Typography
-        variant="overline"
-        sx={{
-          color: 'error.main',
-          mb: 2,
-          display: 'block',
-          fontWeight: 600,
-          letterSpacing: 1,
-        }}
-      >
-        The Challenge
-      </Typography>
       <Typography variant="h2" component="h2" sx={{ mb: 3 }}>
         The Problem
       </Typography>
@@ -256,75 +244,6 @@ export function ProductProblem({ sx, ...other }) {
     </Box>
   );
 
-  const renderConclusion = () => (
-    <Box
-      component={m.div}
-      variants={varFade('inUp', { distance: 24 })}
-      sx={[
-        (theme) => ({
-          mt: 8,
-          p: 5,
-          borderRadius: 3,
-          textAlign: 'center',
-          bgcolor: varAlpha(theme.vars.palette.grey['500Channel'], 0.04),
-          border: `2px solid ${varAlpha(theme.vars.palette.grey['500Channel'], 0.12)}`,
-        }),
-      ]}
-    >
-      <Box
-        sx={[
-          (theme) => ({
-            width: 64,
-            height: 64,
-            mx: 'auto',
-            mb: 3,
-            display: 'flex',
-            borderRadius: '50%',
-            alignItems: 'center',
-            justifyContent: 'center',
-            bgcolor: varAlpha(theme.vars.palette.error.mainChannel, 0.12),
-          }),
-        ]}
-      >
-        <Iconify icon="eva:alert-triangle-outline" width={32} color="error.main" />
-      </Box>
-      <Typography
-        variant="h4"
-        sx={{
-          mb: 2,
-          fontWeight: 700,
-          color: 'text.primary',
-        }}
-      >
-        The Cost of Replacement
-      </Typography>
-      <Typography
-        variant="h6"
-        sx={{
-          maxWidth: 700,
-          mx: 'auto',
-          fontWeight: 400,
-          color: 'text.secondary',
-          lineHeight: 1.8,
-        }}
-      >
-        Replacing this infrastructure is{' '}
-        <Box component="span" sx={{ color: 'error.main', fontWeight: 600 }}>
-          expensive
-        </Box>
-        ,{' '}
-        <Box component="span" sx={{ color: 'error.main', fontWeight: 600 }}>
-          disruptive
-        </Box>
-        , and{' '}
-        <Box component="span" sx={{ color: 'error.main', fontWeight: 600 }}>
-          environmentally wasteful
-        </Box>
-        .
-      </Typography>
-    </Box>
-  );
-
   return (
     <Box
       component="section"
@@ -342,7 +261,6 @@ export function ProductProblem({ sx, ...other }) {
         {renderDescription()}
         {renderLegacyOutputs()}
         {renderMissingFeatures()}
-        {renderConclusion()}
       </Container>
     </Box>
   );

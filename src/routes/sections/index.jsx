@@ -1,7 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Navigate } from 'react-router';
 
-import { CONFIG } from 'src/global-config';
 import { ProductLayout } from 'src/layouts/simple/product-layout';
 
 import { LoadingScreen } from 'src/components/loading-screen';
@@ -17,12 +15,6 @@ const ProductPage = lazy(() => import('src/pages/product'));
 export const routesSection = [
   {
     path: '/',
-    element: <Navigate to={CONFIG.auth.redirectPath} replace />,
-  },
-
-  // Product page
-  {
-    path: 'product',
     element: (
       <Suspense fallback={<LoadingScreen />}>
         <ProductLayout>
