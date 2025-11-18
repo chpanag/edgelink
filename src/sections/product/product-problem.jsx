@@ -166,10 +166,9 @@ export function ProductProblem({ sx, ...other }) {
     <Box
       component="section"
       sx={[
-        (theme) => ({
+        {
           py: { xs: 8, md: 12 },
-          bgcolor: varAlpha(theme.vars.palette.grey['500Channel'], 0.04),
-        }),
+        },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
       {...other}

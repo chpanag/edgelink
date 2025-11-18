@@ -22,8 +22,13 @@ const SOLUTION_FEATURES = [
     description: 'Decoding vendor-specific protocols',
   },
   {
+    icon: 'eva:trending-up-outline',
+    title: 'Hardware acceleration',
+    description: 'GPU/TPU/FPGA via vAccel framework',
+  },
+  {
     icon: 'eva:file-text-outline',
-    title: 'Normalized data models',
+    title: 'Normalized data',
     description: 'Standardised data representation',
   },
   {
@@ -45,11 +50,6 @@ const SOLUTION_FEATURES = [
     icon: 'eva:lock-outline',
     title: 'Full attestation',
     description: 'Based on DICE and EAT',
-  },
-  {
-    icon: 'eva:globe-outline',
-    title: 'Cloud-native ready',
-    description: 'K8s orchestration, remotely manageable',
   },
 ];
 
@@ -162,7 +162,7 @@ export function ProductSolution({ sx, ...other }) {
         Legacy devices instantly become part of the compute continuum
       </Typography>
       <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-        Secure, remotely manageable and interoperable
+        Secure, remotely manageable, hardware-accelerated, and interoperable
       </Typography>
     </Box>
   );
@@ -172,9 +172,10 @@ export function ProductSolution({ sx, ...other }) {
       id="solution"
       component="section"
       sx={[
-        {
+        (theme) => ({
           py: { xs: 8, md: 12 },
-        },
+          bgcolor: varAlpha(theme.vars.palette.grey['500Channel'], 0.04),
+        }),
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
       {...other}

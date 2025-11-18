@@ -15,7 +15,7 @@ import { varFade, MotionViewport } from 'src/components/animate';
 const USE_CASES = [
   {
     icon: 'eva:flash-outline',
-    title: 'Retrofitting legacy EV chargers',
+    title: 'Retrofitting legacy equipment',
     description: 'Extract energy, current, voltage, state, error codes.',
     color: 'primary',
   },
@@ -33,8 +33,8 @@ const USE_CASES = [
   },
   {
     icon: 'eva:trending-up-outline',
-    title: 'Edge data acquisition for flexibility markets',
-    description: 'Feed optimisation engines with reliable real-time data.',
+    title: 'Edge ML inference on the edge',
+    description: 'Hardware-accelerated inference using vAccel.',
     color: 'success',
   },
   {
@@ -48,7 +48,7 @@ const USE_CASES = [
     title: 'Legacy HVAC systems',
     description: 'Connect building automation equipment to modern IoT platforms.',
     color: 'secondary',
-  },
+  }
 ];
 
 export function ProductUseCases({ sx, ...other }) {

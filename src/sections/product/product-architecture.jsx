@@ -21,6 +21,7 @@ const HARDWARE = [
   'External ADC modules',
   'RS-485/RS-232 transceivers',
   'Secure storage for cryptographic keys',
+  'Optional GPU/TPU/FPGA accelerators',
 ];
 
 const SOFTWARE = [
@@ -37,6 +38,17 @@ const SOFTWARE = [
       urunc
     </Link>{' '}
     configured as OCI runtime
+  </>,
+  <>
+    <Link
+      href="https://vaccel.org"
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{ color: 'inherit', fontWeight: 600 }}
+    >
+      vAccel
+    </Link>{' '}
+    for serverless hardware acceleration
   </>,
   'Protocol engine (MQTT/OPC UA/REST)',
   'OTA updater + attestation client',
@@ -194,9 +206,10 @@ export function ProductArchitecture({ sx, ...other }) {
       id="architecture"
       component="section"
       sx={[
-        {
+        (theme) => ({
           py: { xs: 8, md: 12 },
-        },
+          bgcolor: varAlpha(theme.vars.palette.grey['500Channel'], 0.04),
+        }),
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
       {...other}

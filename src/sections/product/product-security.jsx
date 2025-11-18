@@ -45,6 +45,14 @@ const SECURITY_FEATURES = [
     ),
   },
   {
+    title: 'Secure Hardware Acceleration',
+    description: (
+      <>
+        vAccel prevents data leakage between consecutive runs on shared accelerators by shifting security concerns to hardware
+      </>
+    ),
+  },
+  {
     title: 'End-to-End TLS',
     description: 'Encrypted edge-to-cloud communication',
   },

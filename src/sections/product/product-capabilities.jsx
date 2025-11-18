@@ -48,6 +48,25 @@ const CAPABILITIES = [
     color: 'success',
   },
   {
+    icon: 'eva:trending-up-outline',
+    title: 'Hardware-Accelerated Edge Processing',
+    description: (
+      <>
+        Leverage GPU, TPU, and FPGA accelerators through{' '}
+        <Link
+          href="https://vaccel.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'inherit', fontWeight: 600 }}
+        >
+          vAccel
+        </Link>
+        {' '}for ML inference, image processing, and tensor operations at the edge with minimal overhead.
+      </>
+    ),
+    color: 'info',
+  },
+  {
     icon: 'eva:sync-outline',
     title: 'Device Repurposing Pipeline',
     description:
@@ -62,11 +81,11 @@ const CAPABILITIES = [
     color: 'error',
   },
   {
-    icon: 'eva:activity-outline',
-    title: 'Robust Time-Series Processing',
+    icon: 'eva:layers-fill',
+    title: 'Flexible Acceleration Backends',
     description:
-      'Normalization, timestamping, debouncing, filtering, buffering for network loss.',
-    color: 'secondary',
+      "Support for TensorFlow, PyTorch, TVM, and custom FPGA operations through vAccel's modular plugin architecture.",
+    color: 'success',
   },
 ];
 
@@ -145,10 +164,9 @@ export function ProductCapabilities({ sx, ...other }) {
       id="capabilities"
       component="section"
       sx={[
-        (theme) => ({
+        {
           py: { xs: 8, md: 12 },
-          bgcolor: varAlpha(theme.vars.palette.grey['500Channel'], 0.04),
-        }),
+        },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
       {...other}

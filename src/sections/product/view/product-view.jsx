@@ -5,6 +5,7 @@ import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll
 
 import { ProductHero } from '../product-hero';
 import { ProductFooter } from '../product-footer';
+import { ProductVaccel } from '../product-vaccel';
 import { ProductContact } from '../product-contact';
 import { ProductProblem } from '../product-problem';
 import { ProductSecurity } from '../product-security';
@@ -39,6 +40,8 @@ export function ProductView() {
         <ProductCapabilities />
 
         <ProductArchitecture />
+
+        <ProductVaccel />
 
         <ProductHowItWorks />
 

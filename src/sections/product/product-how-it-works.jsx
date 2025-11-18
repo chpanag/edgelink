@@ -27,24 +27,30 @@ const HOW_IT_WORKS = [
   },
   {
     step: '3',
+    title: 'Accelerate',
+    description: 'ML inference & processing via vAccel on GPU/TPU/FPGA.',
+    icon: 'eva:trending-up-outline',
+  },
+  {
+    step: '4',
     title: 'Canonicalise',
     description: 'Metrics into a structured data model.',
     icon: 'eva:file-text-outline',
   },
   {
-    step: '4',
+    step: '5',
     title: 'Publish',
     description: 'To MQTT/OPC UA/REST.',
     icon: 'eva:cloud-upload-outline',
   },
   {
-    step: '5',
+    step: '6',
     title: 'Manage',
     description: 'Devices centrally with OTA + attestation.',
     icon: 'eva:settings-outline',
   },
   {
-    step: '6',
+    step: '7',
     title: 'Repurpose',
     description: 'Devices by scheduling secure FlashJobs.',
     icon: 'eva:refresh-outline',
@@ -74,7 +80,7 @@ export function ProductHowItWorks({ sx, ...other }) {
           component={m.div}
           variants={varFade('inUp', { distance: 24 })}
           key={index}
-          size={{ xs: 12, sm: 6, md: 4, lg: 2 }}
+          size={{ xs: 12, sm: 6, md: 4 }}
         >
           <Stack
             spacing={2}
