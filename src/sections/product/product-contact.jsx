@@ -44,7 +44,7 @@ export function ProductContact({ sx, ...other }) {
           >
             <Box
               component="img"
-              src={`${CONFIG.assetsDir}/assets/images/edgelink/nubificus-logo.png`}
+              src={`${CONFIG.assetsDir}/assets/images/edgelink/nubificus-logo.svg`}
               alt="Nubificus Logo"
               sx={{
                 width: '100%',
