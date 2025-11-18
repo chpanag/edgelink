@@ -35,7 +35,7 @@ export function ProductFooter({ sx, ...other }) {
           <Stack direction="row" spacing={1} alignItems="center">
             <Box
               component="img"
-              src={`${CONFIG.assetsDir}/assets/images/edgelink/nubificus-logo.svg`}
+              src={`${CONFIG.assetsDir}/assets/images/edgelink/nubificus-logo.png`}
               alt="Nubificus Logo"
               sx={{ height: 24, width: 'auto' }}
             />
