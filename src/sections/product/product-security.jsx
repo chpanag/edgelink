@@ -122,7 +122,7 @@ export function ProductSecurity({ sx, ...other }) {
           {SECURITY_FEATURES.map((feature, index) => (
             <Stack key={index} direction="row" spacing={2} alignItems="flex-start">
               <Iconify
-                icon="eva:shield-checkmark-fill"
+                icon="eva:shield-fill"
                 width={24}
                 sx={{ mt: 0.25, color: 'error.main', flexShrink: 0 }}
               />

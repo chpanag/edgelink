@@ -14,7 +14,7 @@ import { varFade, MotionViewport } from 'src/components/animate';
 
 const USE_CASES = [
   {
-    icon: 'eva:battery-charging-outline',
+    icon: 'eva:flash-outline',
     title: 'Retrofitting legacy EV chargers',
     description: 'Extract energy, current, voltage, state, error codes.',
     color: 'primary',

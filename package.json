@@ -62,6 +62,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "@iconify-json/eva": "^1.2.3",
     "@vitejs/plugin-react-swc": "^4.1.0",
     "eslint": "^9.36.0",
     "eslint-import-resolver-alias": "^1.1.2",
