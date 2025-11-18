@@ -4,8 +4,6 @@ import { ProductLayout } from 'src/layouts/simple/product-layout';
 
 import { LoadingScreen } from 'src/components/loading-screen';
 
-import { authRoutes } from './auth';
-import { dashboardRoutes } from './dashboard';
 
 // ----------------------------------------------------------------------
 
@@ -24,11 +22,6 @@ export const routesSection = [
     ),
   },
 
-  // Auth
-  ...authRoutes,
-
-  // Dashboard
-  ...dashboardRoutes,
 
   // No match
   { path: '*', element: <Page404 /> },
