@@ -8,6 +8,7 @@ import react from '@vitejs/plugin-react-swc';
 const PORT = 3031;
 
 export default defineConfig({
+  base: '/edgelink/',
   plugins: [
     react(),
     checker({
