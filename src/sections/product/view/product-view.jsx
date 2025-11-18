@@ -3,16 +3,16 @@ import Stack from '@mui/material/Stack';
 import { BackToTopButton } from 'src/components/animate/back-to-top-button';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
 
-import { ProductArchitecture } from '../product-architecture';
-import { ProductCapabilities } from '../product-capabilities';
-import { ProductContact } from '../product-contact';
-import { ProductFooter } from '../product-footer';
 import { ProductHero } from '../product-hero';
-import { ProductHowItWorks } from '../product-how-it-works';
+import { ProductFooter } from '../product-footer';
+import { ProductContact } from '../product-contact';
 import { ProductProblem } from '../product-problem';
 import { ProductSecurity } from '../product-security';
 import { ProductSolution } from '../product-solution';
 import { ProductUseCases } from '../product-use-cases';
+import { ProductHowItWorks } from '../product-how-it-works';
+import { ProductArchitecture } from '../product-architecture';
+import { ProductCapabilities } from '../product-capabilities';
 
 // ----------------------------------------------------------------------
 
